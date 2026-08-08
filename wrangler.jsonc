@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "jimrising",
+  "compatibility_date": "2026-05-30",
+  "main": ".output/server/index.mjs",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".output/public"
+  }
+}
