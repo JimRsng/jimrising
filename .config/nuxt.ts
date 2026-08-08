@@ -61,6 +61,7 @@ export default defineNuxtConfig({
   },
 
   ui: {
+    fonts: true,
     colors: {
       neutral: "slate",
       primary: "red"
@@ -119,6 +120,13 @@ export default defineNuxtConfig({
       autoInit: false,
       stylistic: true
     }
+  },
+
+  fonts: {
+    families: [
+      { name: "Bebas Neue", weights: [400], display: "swap" },
+      { name: "DM Sans", weights: [300, 400, 500, 600], display: "swap" }
+    ]
   },
 
   icon: {
