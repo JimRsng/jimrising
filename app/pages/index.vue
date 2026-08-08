@@ -14,9 +14,11 @@ const links: ButtonProps[] = [
 </script>
 
 <template>
+  <!-- HERO -->
   <UPageHero id="hero" :links="links" :title="SITE.name" :description="SITE.description" orientation="horizontal" class="relative h-dvh flex items-center" :ui="{ wrapper: 'z-2' }">
     <div class="hero-overlay absolute inset-0 z-1" />
   </UPageHero>
+  <!-- LEGADO -->
   <UPageHero id="legado" orientation="horizontal" class="relative flex items-center bg-dark-2" :ui="{ container: 'py-12 sm:py-12 lg:py-20' }">
     <div class="absolute left-[50%] translate-x-[-50%] bottom-2 text-9xl text-nowrap pointer-events-none user-select-none text-red-500 opacity-3 font-bold -z-1">STARCRAFT</div>
     <template #title>
@@ -30,15 +32,15 @@ const links: ButtonProps[] = [
         </div>
         <div class="grid grid-cols-3 border border-primary/30">
           <div class="flex flex-col gap-2 items-center border-r border-primary/30 p-5">
-            <span class="text-primary text-4xl">12</span>
+            <span class="text-primary text-4xl font-bold">12</span>
             <span class="text-sm">AÑOS ACTIVO</span>
           </div>
           <div class="flex flex-col gap-2 items-center border-r border-primary/30 p-5">
-            <span class="text-primary text-4xl">ZERG</span>
+            <span class="text-primary text-4xl font-bold">ZERG</span>
             <span class="text-sm">CLASE PRINCIPAL</span>
           </div>
           <div class="flex flex-col gap-2 items-center p-5">
-            <span class="text-primary text-4xl">$40K USD+</span>
+            <span class="text-primary text-4xl font-bold">$40K USD+</span>
             <span class="text-sm">EN GANANCIAS</span>
           </div>
         </div>
