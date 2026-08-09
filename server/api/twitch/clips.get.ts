@@ -5,8 +5,8 @@ export default defineCachedEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
   if (!config.twitch.clientId || !config.twitch.clientSecret) {
     throw createError({
-      statusCode: ErrorCode.INTERNAL_SERVER_ERROR,
-      statusMessage: "Twitch client ID and secret are not configured."
+      status: ErrorCode.INTERNAL_SERVER_ERROR,
+      message: "Twitch client ID and secret are not configured."
     });
   }
 
@@ -17,8 +17,8 @@ export default defineCachedEventHandler(async (event) => {
   const broadcasterId = await twitch.users.getUserByName(SITE.links.twitch.username);
   if (!broadcasterId) {
     throw createError({
-      statusCode: ErrorCode.NOT_FOUND,
-      statusMessage: "Twitch broadcaster not found."
+      status: ErrorCode.NOT_FOUND,
+      message: "Twitch broadcaster not found."
     });
   }
   const { data } = await twitch.clips.getClipsForBroadcaster(broadcasterId?.id, { limit: 100 });
