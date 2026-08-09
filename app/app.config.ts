@@ -15,7 +15,7 @@ export default defineAppConfig({
     },
     footer: {
       slots: {
-        root: "bg-dark-2"
+        root: "bg-elevated"
       }
     }
   }

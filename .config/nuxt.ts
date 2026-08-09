@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   },
 
   css: [
-    "~/assets/css/main.css",
+    "~/assets/css/ui.tailwind.css",
     "~/assets/scss/app.scss"
   ],
 

@@ -1,5 +1,6 @@
 :root {
   background-color: var(--ui-color-neutral-100);
+  scrollbar-width: auto;
   scroll-behavior: smooth;
 }
 
@@ -36,26 +37,8 @@ html, body {
   font-family: 'Bebas Neue', Courier, monospace;
 }
 
-.bg-dark {
-  background-color: #080c10;
-}
-
-.bg-dark-2 {
-  background-color: #0D1117;
-}
-
 img {
   object-fit: contain;
-}
-
-.chart-container {
-  position: relative;
-  height: 400px;
-  width: 100%;
-}
-
-.iconify {
-  flex-shrink: 0;
 }
 
 @media (width <= 768px) {
@@ -77,4 +60,9 @@ a.router-link-exact-active.nav-link {
   background-color: rgb(255 255 255 / 10%);
   border: 1px solid rgb(255 255 255 / 6%);
   border-radius: 4px;
+}
+
+.nuxt-loading-indicator {
+  background: repeating-linear-gradient(to right, var(--ui-primary) 0%, var(--ui-primary) 50%, var(--ui-secondary) 100%)!important;
+  box-shadow: 0 0 10px rgb(255 255 255 / 50%);
 }

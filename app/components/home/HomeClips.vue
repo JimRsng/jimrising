@@ -7,7 +7,7 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
 
 <template>
   <UPageHero
-    class="relative flex items-center bg-dark-2"
+    class="relative flex items-center bg-elevated"
     :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }"
   >
     <template #title>
@@ -23,8 +23,8 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
         arrows
         :ui="{
           item: 'basis-3/4 lg:basis-1/3',
-          prev: 'sm:start-8 z-2 rounded-sm bg-dark',
-          next: 'sm:end-8 z-2 rounded-sm bg-dark',
+          prev: 'sm:start-8 z-2 rounded-sm bg-default',
+          next: 'sm:end-8 z-2 rounded-sm bg-default',
           viewport: 'pb-2',
         }"
       >

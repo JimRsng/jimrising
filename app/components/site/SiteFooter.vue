@@ -24,11 +24,11 @@
           :to="link.url"
           target="_blank"
           :ui="{
-            base: 'p-3 ring-primary/30 hover:ring-primary hover:text-default text-muted',
+            base: 'p-3 ring-primary/30 hover:ring-primary hover:text-default text-dimmed',
           }"
         />
       </div>
-      <p class="text-muted text-xs uppercase tracking-widest">© {{ new Date().getFullYear() }} JimRising · All rights reserved</p>
+      <p class="text-dimmed text-xs uppercase tracking-widest">© {{ new Date().getFullYear() }} JimRising · All rights reserved</p>
     </div>
   </UFooter>
 </template>
