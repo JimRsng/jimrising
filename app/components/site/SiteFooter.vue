@@ -1,5 +1,5 @@
 <template>
-  <UFooter :ui="{ top: 'p-0!', center: 'm-0!', left: 'm-0!' }">
+  <UFooter id="footer" :ui="{ top: 'p-0!', center: 'm-0!', left: 'm-0!' }">
     <template #top>
       <USeparator
         :ui="{ border: 'border-primary/30' }"

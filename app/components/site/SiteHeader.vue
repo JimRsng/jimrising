@@ -20,7 +20,7 @@ const pages: NavigationMenuItem[] = [
   },
   {
     label: "Redes",
-    to: "#redes"
+    to: "#footer"
   }
 ];
 
