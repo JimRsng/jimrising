@@ -4,23 +4,23 @@ import type { NavigationMenuItem } from "@nuxt/ui";
 
 const pages: NavigationMenuItem[] = [
   {
-    label: "INICIO",
+    label: "Inicio",
     to: "/"
   },
   {
-    label: "LEGADO",
+    label: "Legado",
     to: "#legado"
   },
   {
-    label: "HORARIO",
+    label: "Horario",
     to: "#horario"
   },
   {
-    label: "CLIPS",
+    label: "Clips",
     to: "#clips"
   },
   {
-    label: "REDES",
+    label: "Redes",
     to: "#redes"
   }
 ];
@@ -61,7 +61,7 @@ const timeAgo = useTimeAgoIntl(buildInfo.time, {
         <UNavigationMenu :items="externalPages" variant="link" :highlight="false" class="w-full justify-center" :ui="{ linkLabel: 'uppercase' }" />
       </template>
       <template #body>
-        <UNavigationMenu :items="pages" variant="link" orientation="vertical" :highlight="false" class="w-full justify-center" />
+        <UNavigationMenu :items="pages" variant="link" orientation="vertical" :highlight="false" class="w-full justify-center" :ui="{ linkLabel: 'uppercase' }" />
       </template>
     </UHeader>
     <UMain>
