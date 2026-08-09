@@ -24,7 +24,7 @@
           :to="link.url"
           target="_blank"
           :ui="{
-            base: 'p-3 ring-primary/30 hover:ring-primary hover:text-default text-dimmed',
+            base: 'p-3 ring-primary/30 hover:ring-primary hover:text-default text-dimmed scale-on-hover',
           }"
         />
       </div>

@@ -7,7 +7,7 @@ const links: ButtonProps[] = [
     to: SITE.links.twitch.url,
     target: "_blank",
     ui: {
-      base: "px-6 py-3 text-lg font-semibold bg-primary text-black shadow shadow-xl hover:bg-primary/90 hover:shadow-red-500/30 uppercase"
+      base: "px-6 py-3 text-lg font-semibold bg-primary text-black shadow shadow-xl hover:bg-primary/90 hover:shadow-red-500/30 uppercase scale-on-hover"
     }
   }
 ];
