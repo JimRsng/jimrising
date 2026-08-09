@@ -34,8 +34,10 @@ const links: ButtonProps[] = [
       }"
     />
     <template #title>
-      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Twitch Partner · Streamer de tiempo completo</h5>
-      <h1 class="font-bebas tracking-normal sm:text-9xl max-w-100">{{ SITE.name }}</h1>
+      <div>
+        <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Twitch Partner · Streamer de tiempo completo</h5>
+        <h1 class="font-bebas tracking-normal sm:text-9xl max-w-100">{{ SITE.name }}</h1>
+      </div>
     </template>
   </UPageHero>
 </template>

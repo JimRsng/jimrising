@@ -11,8 +11,10 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
     :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }"
   >
     <template #title>
-      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Highlights</h5>
-      <h1 class="font-bebas uppercase">Top clips</h1>
+      <div>
+        <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Highlights</h5>
+        <h1 class="font-bebas uppercase">Top clips</h1>
+      </div>
     </template>
     <template #description>
       <UCarousel

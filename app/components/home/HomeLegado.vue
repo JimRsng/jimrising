@@ -2,8 +2,10 @@
   <UPageHero orientation="horizontal" class="relative flex items-center bg-dark-2 overflow-hidden" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide' }">
     <div aria-hidden="true" role="presentation" class="absolute left-[50%] translate-x-[-50%] -bottom-16 text-[16rem] text-nowrap pointer-events-none user-select-none text-red-500 opacity-3 font-bold font-bebas tracking-widest">STARCRAFT</div>
     <template #title>
-      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Carrera profesional</h5>
-      <h1 class="max-w-50 font-bebas uppercase">El Legado</h1>
+      <div>
+        <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Carrera profesional</h5>
+        <h1 class="max-w-50 font-bebas uppercase">El Legado</h1>
+      </div>
     </template>
     <template #description>
       <div class="flex flex-col gap-8">
