@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      title: SITE.title,
+      title: SITE.name,
       htmlAttrs: {
         lang: "es"
       },
@@ -53,7 +53,7 @@ export default defineNuxtConfig({
     "~/assets/scss/app.scss"
   ],
 
-  site: { url: SITE.url },
+  site: { url: SITE.host },
 
   colorMode: {
     preference: "dark",
