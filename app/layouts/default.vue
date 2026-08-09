@@ -27,8 +27,13 @@ const pages: NavigationMenuItem[] = [
 
 const externalPages: NavigationMenuItem[] = [
   {
-    label: "JIMTRACKER",
+    label: "JimTracker",
     to: "https://jimtracker.com",
+    target: "_blank"
+  },
+  {
+    label: "Comunidad",
+    to: "https://comunidad.jimtracker.com",
     target: "_blank"
   }
 ];
@@ -53,7 +58,7 @@ const timeAgo = useTimeAgoIntl(buildInfo.time, {
       </template>
       <UNavigationMenu :items="pages" variant="link" :highlight="false" class="w-full justify-center" />
       <template #right>
-        <UNavigationMenu :items="externalPages" variant="link" :highlight="false" class="w-full justify-center" />
+        <UNavigationMenu :items="externalPages" variant="link" :highlight="false" class="w-full justify-center" :ui="{ linkLabel: 'uppercase' }" />
       </template>
       <template #body>
         <UNavigationMenu :items="pages" variant="link" orientation="vertical" :highlight="false" class="w-full justify-center" />
