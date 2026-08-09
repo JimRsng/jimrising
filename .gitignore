@@ -9,5 +9,4 @@ scripts/*.js
 *.sqlite3
 /*.sql
 .wrangler
-
 .data
