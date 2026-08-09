@@ -3,11 +3,11 @@ import type { ButtonProps } from "@nuxt/ui";
 
 const links: ButtonProps[] = [
   {
-    label: "ÚNETE AL STEREAM",
+    label: "Únete al stream",
     to: SITE.links.twitch.url,
     target: "_blank",
     ui: {
-      base: "px-6 py-3 text-lg font-semibold bg-red-500 text-black shadow shadow-xl hover:bg-red-500/90 hover:shadow-red-500/30"
+      base: "px-6 py-3 text-lg font-semibold bg-primary text-black shadow shadow-xl hover:bg-primary/90 hover:shadow-red-500/30 uppercase"
     }
   }
 ];
@@ -28,8 +28,8 @@ const { data: clips } = await useFetch("/api/twitch/clips");
   <UPageHero id="legado" orientation="horizontal" class="relative flex items-center bg-dark-2 overflow-hidden" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide' }">
     <div aria-hidden="true" role="presentation" class="absolute left-[50%] translate-x-[-50%] -bottom-16 text-[16rem] text-nowrap pointer-events-none user-select-none text-red-500 opacity-3 font-bold font-bebas tracking-widest">STARCRAFT</div>
     <template #title>
-      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4">CARRERA PROFESIONAL</h5>
-      <h1 class="max-w-50 font-bebas">EL LEGADO</h1>
+      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Carrera profesional</h5>
+      <h1 class="max-w-50 font-bebas uppercase">El Legado</h1>
     </template>
     <template #description>
       <div class="flex flex-col gap-8">
@@ -39,15 +39,15 @@ const { data: clips } = await useFetch("/api/twitch/clips");
         <div class="grid grid-cols-3 border border-primary/30">
           <div class="flex flex-col gap-2 items-center justify-center border-r border-primary/30 p-5">
             <span class="text-primary text-4xl font-bold font-bebas">12</span>
-            <span class="text-sm text-center">AÑOS ACTIVO</span>
+            <span class="text-sm text-center uppercase">Años activo</span>
           </div>
           <div class="flex flex-col gap-2 items-center justify-center border-r border-primary/30 p-5">
-            <span class="text-primary text-4xl font-bold font-bebas">ZERG</span>
-            <span class="text-sm text-center">CLASE PRINCIPAL</span>
+            <span class="text-primary text-4xl font-bold font-bebas uppercase">Zerg</span>
+            <span class="text-sm text-center uppercase">Clase principal</span>
           </div>
           <div class="flex flex-col gap-2 items-center justify-center p-5">
             <span class="text-primary text-4xl font-bold font-bebas">$40K USD+</span>
-            <span class="text-sm text-center">EN GANANCIAS</span>
+            <span class="text-sm text-center uppercase">En ganancias</span>
           </div>
         </div>
       </div>
@@ -71,16 +71,16 @@ const { data: clips } = await useFetch("/api/twitch/clips");
   <!-- HORARIO -->
   <UPageHero id="horario" class="relative flex items-center bg-dark" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }">
     <template #title>
-      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4">HORARIO SEMANAL</h5>
-      <h1 class="font-bebas">PÁSATE POR EL DIRECTO</h1>
+      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Horario semanal</h5>
+      <h1 class="font-bebas uppercase">Pásate por el directo</h1>
     </template>
     <template #description />
   </UPageHero>
   <!-- TOP CLIPS -->
   <UPageHero id="clips" class="relative flex items-center bg-dark-2" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }">
     <template #title>
-      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4">HIGHLIGHTS</h5>
-      <h1 class="font-bebas">TOP CLIPS</h1>
+      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Highlights</h5>
+      <h1 class="font-bebas uppercase">Top clips</h1>
     </template>
     <template #description>
       <UCarousel
