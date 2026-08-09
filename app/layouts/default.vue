@@ -59,7 +59,9 @@ const timeAgo = useTimeAgoIntl(buildInfo.time, {
         <UNavigationMenu :items="pages" variant="link" orientation="vertical" :highlight="false" class="w-full justify-center" />
       </template>
     </UHeader>
-    <slot />
+    <UMain>
+      <slot />
+    </UMain>
     <!-- FOOTER -->
     <UFooter :ui="{ top: 'p-0!', center: 'm-0!', left: 'm-0!' }">
       <template #top>
