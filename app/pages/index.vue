@@ -68,6 +68,15 @@ const { data: clips } = await useFetch("/api/twitch/clips");
       </template>
     </div>
   </UPageHero>
+  <!-- HORARIO -->
+  <UPageHero id="horario" class="relative flex items-center bg-dark" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }">
+    <template #title>
+      <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4">HORARIO SEMANAL</h5>
+      <h1 class="font-bebas">PÁSATE POR EL DIRECTO</h1>
+    </template>
+    <template #description />
+  </UPageHero>
+  <!-- TOP CLIPS -->
   <UPageHero id="clips" class="relative flex items-center bg-dark-2" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }">
     <template #title>
       <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4">HIGHLIGHTS</h5>
