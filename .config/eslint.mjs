@@ -21,6 +21,7 @@ export default withNuxt([{
     "@stylistic/space-before-blocks": "error",
     "@stylistic/no-trailing-spaces": "error",
     "@stylistic/function-call-spacing": ["error", "never"],
+    "@stylistic/space-infix-ops": "error",
     "nuxt/prefer-import-meta": "error",
     "vue/first-attribute-linebreak": ["error", { singleline: "ignore", multiline: "ignore" }],
     "vue/max-attributes-per-line": ["error", { singleline: 100 }],
