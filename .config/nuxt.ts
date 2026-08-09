@@ -2,7 +2,6 @@ import { SITE } from "../shared/utils/site";
 import icons from "./icons";
 
 export default defineNuxtConfig({
-
   modules: [
     "@nuxt/ui",
     "nuxt-ui-colors-no-inline",
@@ -11,13 +10,16 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@nuxthub/core"
   ],
+
   $production: {
     nitro: {
       preset: "cloudflare-module"
     }
   },
+
   // future: { compatibilityVersion: 4 },
   devtools: { enabled: true },
+
   app: {
     head: {
       charset: "utf-8",
