@@ -24,7 +24,7 @@ const links: ButtonProps[] = [
       backgroundSize: 'cover',
       backgroundPosition: 'center top',
       backgroundRepeat: 'no-repeat',
-      backgroundImage: 'url(/images/bg-1.png)',
+      backgroundImage: 'url(/images/backgrounds/hero.png)',
     }"
   >
     <div

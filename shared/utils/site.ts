@@ -3,7 +3,7 @@ export const SITE = {
   host: "https://jimrising.ahmedr.workers.dev",
   cdn: import.meta.dev ? "http://localhost:5173/uploads" : "https://cdn.jimtracker.com",
   description: "Exjugador profesional de StarCraft 2 y pionero del streaming desde 2011. Fui el primer partner de Twitch en la región y, tras años de contenido de variedad, hoy mi enfoque principal es League of Legends.",
-  logo: "/images/logo.png",
+  logo: "/images/logos/jimrising.png",
   cover: "",
   links: {
     instagram: {
