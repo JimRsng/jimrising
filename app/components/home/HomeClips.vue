@@ -39,8 +39,18 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
                 {{ item.title }}
               </div>
               <div class="text-sm tracking-normal font-normal flex gap-3">
-                <div class="whitespace-nowrap"><span class="font-bebas tracking-widest">{{ new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 }).format(item.views) }}</span> views</div>
-                <div class="whitespace-nowrap"><span class="font-bebas tracking-widest">{{ new Date(item.createdAt).toLocaleDateString("es-MX", { month: "short", year: "numeric", day: "numeric" }) }}</span></div>
+                <div class="whitespace-nowrap">
+                  <span class="font-bebas tracking-widest">
+                    <span>{{ new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 }).format(item.views) }} views</span>
+                  </span>
+                </div>
+                <div class="whitespace-nowrap">
+                  <span class="font-bebas tracking-widest">
+                    <span>
+                      <NuxtTime :datetime="item.createdAt" month="short" year="numeric" day="numeric" locale="es-MX" />
+                    </span>
+                  </span>
+                </div>
                 <div class="whitespace-nowrap"><span class="font-bebas tracking-widest">by:</span> {{ item.createdBy }}</div>
               </div>
             </div>
