@@ -9,12 +9,6 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
   <UPageHero
     class="relative flex items-center bg-dark-2"
     :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }"
-    :style="{
-      backgroundSize: 'cover',
-      backgroundPosition: 'center top',
-      backgroundRepeat: 'no-repeat',
-      backgroundImage: 'url(/images/bg-1.png)',
-    }"
   >
     <template #title>
       <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Highlights</h5>

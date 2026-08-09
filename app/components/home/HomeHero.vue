@@ -14,7 +14,19 @@ const links: ButtonProps[] = [
 </script>
 
 <template>
-  <UPageHero :links="links" :description="SITE.description" orientation="horizontal" class="relative h-dvh flex items-center" :ui="{ wrapper: 'z-2', title: 'tracking-wide' }">
+  <UPageHero
+    :links="links"
+    :description="SITE.description"
+    orientation="horizontal"
+    class="relative h-dvh flex items-center"
+    :ui="{ wrapper: 'z-2', title: 'tracking-wide' }"
+    :style="{
+      backgroundSize: 'cover',
+      backgroundPosition: 'center top',
+      backgroundRepeat: 'no-repeat',
+      backgroundImage: 'url(/images/bg-1.png)',
+    }"
+  >
     <div
       class="absolute inset-0 z-1"
       :style="{
