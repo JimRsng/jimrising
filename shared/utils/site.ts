@@ -8,26 +8,31 @@ export const SITE = {
     twitch: {
       title: "Twitch",
       icon: "simple-icons:twitch",
+      username: "jimrsng",
       url: "https://www.twitch.tv/jimrsng"
     },
     kick: {
       title: "Kick",
       icon: "simple-icons:kick",
+      username: "jimrisingtv",
       url: "https://kick.com/jimrisingtv"
     },
     instagram: {
       title: "Instagram",
       icon: "simple-icons:instagram",
+      username: "jimrising12",
       url: "https://www.instagram.com/Jimrising12"
     },
     tiktok: {
       title: "TikTok",
       icon: "simple-icons:tiktok",
+      username: "jimrising",
       url: "https://www.tiktok.com/@jimrising"
     },
     facebook: {
       title: "Facebook",
       icon: "simple-icons:facebook",
+      username: "jimrisingsc2",
       url: "https://www.facebook.com/JimRisingSC2"
     },
     youtube: {

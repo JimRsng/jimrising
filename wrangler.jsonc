@@ -8,5 +8,11 @@
   "assets": {
     "binding": "ASSETS",
     "directory": ".output/public"
-  }
+  },
+    "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "1f151de7f5d84442ad8fc61357aea482"
+    }
+  ]
 }

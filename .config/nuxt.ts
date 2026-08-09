@@ -69,7 +69,10 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-
+    twitch: {
+      clientId: "",
+      clientSecret: ""
+    }
   },
 
   routeRules: {
@@ -102,7 +105,7 @@ export default defineNuxtConfig({
   },
 
   hub: {
-
+    cache: true
   },
 
   vite: {
