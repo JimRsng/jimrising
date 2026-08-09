@@ -12,6 +12,11 @@ export default defineAppConfig({
       slots: {
         base: "rounded-none"
       }
+    },
+    footer: {
+      slots: {
+        root: "bg-dark-2"
+      }
     }
   }
 });

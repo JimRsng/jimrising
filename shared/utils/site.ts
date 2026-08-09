@@ -4,7 +4,20 @@ export const SITE = {
   url: "https://jimrising.ahmedr.workers.dev",
   cdn: import.meta.dev ? "http://localhost:5173/uploads" : "https://cdn.jimtracker.com",
   description: "Exjugador profesional de StarCraft 2 y pionero del streaming desde 2011. Fui el primer partner de Twitch en la región y, tras años de contenido de variedad, hoy mi enfoque principal es League of Legends.",
+  logo: "/images/logo.png",
   links: {
+    instagram: {
+      title: "Instagram",
+      icon: "simple-icons:instagram",
+      username: "jimrising12",
+      url: "https://www.instagram.com/Jimrising12"
+    },
+    x: {
+      title: "X",
+      icon: "simple-icons:x",
+      username: "JimRisingSC",
+      url: "https://x.com/JimRisingSC"
+    },
     twitch: {
       title: "Twitch",
       icon: "simple-icons:twitch",
@@ -17,12 +30,7 @@ export const SITE = {
       username: "jimrisingtv",
       url: "https://kick.com/jimrisingtv"
     },
-    instagram: {
-      title: "Instagram",
-      icon: "simple-icons:instagram",
-      username: "jimrising12",
-      url: "https://www.instagram.com/Jimrising12"
-    },
+
     tiktok: {
       title: "TikTok",
       icon: "simple-icons:tiktok",
