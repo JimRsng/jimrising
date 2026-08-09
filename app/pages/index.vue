@@ -25,7 +25,7 @@ const { data: clips } = await useFetch("/api/twitch/clips");
     </template>
   </UPageHero>
   <!-- LEGADO -->
-  <UPageHero id="legado" orientation="horizontal" class="relative flex items-center bg-dark-2" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide' }">
+  <UPageHero id="legado" orientation="horizontal" class="relative flex items-center bg-dark-2 overflow-hidden" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide' }">
     <div class="absolute left-[50%] translate-x-[-50%] -bottom-16 text-[16rem] text-nowrap pointer-events-none user-select-none text-red-500 opacity-3 font-bold font-bebas tracking-widest">STARCRAFT</div>
     <template #title>
       <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4">CARRERA PROFESIONAL</h5>
