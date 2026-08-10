@@ -15,8 +15,6 @@ const links: ButtonProps[] = [
 
 <template>
   <UPageHero
-    :links="links"
-    :description="SITE.description"
     orientation="horizontal"
     class="relative h-dvh flex items-center"
     :ui="{ wrapper: 'z-2', title: 'tracking-wide' }"
@@ -36,8 +34,18 @@ const links: ButtonProps[] = [
     />
     <template #title>
       <div>
-        <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Twitch Partner · Streamer de tiempo completo</h5>
-        <h1 class="font-bebas tracking-normal sm:text-9xl max-w-100">{{ SITE.name }}</h1>
+        <h5 data-aos="fade-up" data-aos-duration="400" class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Twitch Partner · Streamer de tiempo completo</h5>
+        <h1 data-aos="fade-up" data-aos-duration="800" class="font-bebas tracking-normal sm:text-9xl max-w-100">{{ SITE.name }}</h1>
+      </div>
+    </template>
+    <template #description>
+      <div data-aos="fade-up" data-aos-duration="1200">
+        {{ SITE.description }}
+      </div>
+    </template>
+    <template #links>
+      <div data-aos="fade-up" data-aos-duration="1600">
+        <UButton v-for="link in links" :key="link.label" v-bind="link" />
       </div>
     </template>
   </UPageHero>
