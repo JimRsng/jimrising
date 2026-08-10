@@ -11,6 +11,14 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
     :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }"
     as="section"
   >
+    <div
+      class="absolute inset-0 z-1 pointer-events-none"
+      :style="{
+        backgroundSize: '60px 60px',
+        backgroundImage: 'linear-gradient(rgba(255,26,26,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,26,26,0.1) 1px, transparent 1px)',
+        mask: 'linear-gradient(180deg, transparent 0%, black 40%, transparent 100%)',
+      }"
+    />
     <template #title>
       <div>
         <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Highlights</h5>
@@ -22,6 +30,7 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
         v-slot="{ item }"
         :items="clips"
         arrows
+        class="z-2"
         :ui="{
           item: 'basis-3/4 lg:basis-1/3',
           prev: 'sm:start-8 z-2 rounded-sm bg-default',

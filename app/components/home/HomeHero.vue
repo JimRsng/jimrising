@@ -27,9 +27,17 @@ const links: ButtonProps[] = [
     as="section"
   >
     <div
-      class="absolute inset-0 z-1"
+      class="absolute inset-0 z-1 pointer-events-none"
       :style="{
         background: 'linear-gradient(to right, rgba(8, 12, 16, 0.92) 0%, rgba(8, 12, 16, 0.75) 45%, rgba(8, 12, 16, 0.15) 75%, rgba(8, 12, 16, 0.0) 100%)',
+      }"
+    />
+    <div
+      class="absolute inset-0 z-1 pointer-events-none"
+      :style="{
+        backgroundSize: '60px 60px',
+        backgroundImage: 'linear-gradient(rgba(255,26,26,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,26,26,0.04) 1px, transparent 1px)',
+        mask: 'radial-gradient(ellipse at 30% 50%, black 20%, transparent 65%)',
       }"
     />
     <template #title>
