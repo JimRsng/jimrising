@@ -39,7 +39,7 @@ const externalPages: NavigationMenuItem[] = [
 
 onMounted(() => {
   const sections = document.querySelectorAll<HTMLElement>("section[id]");
-  const navLinks = document.querySelectorAll<HTMLAnchorElement>("nav div[data-slot='center'] a");
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=center] nav a");
   addEventListener("scroll", () => {
     let current = "";
     for (const s of sections) {
