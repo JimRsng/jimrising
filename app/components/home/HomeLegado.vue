@@ -17,12 +17,12 @@
         <div>
           Tras años representando a México en escenarios internacionales y compitiendo contra los mejores del mundo, mi carrera ha evolucionado. Hoy, mantengo esa misma chispa competitiva y pasión por transmitir en la Grieta del Invocador, compartiendo mi experiencia y el día a día en League of Legends con la comunidad que me vio crecer.
         </div>
-        <div class="grid grid-cols-3 border border-primary/30">
-          <div class="flex flex-col gap-2 items-center justify-center border-r border-primary/30 p-5">
+        <div class="grid grid-cols-3 border border-primary/30 divide-x divide-primary/30">
+          <div class="flex flex-col gap-2 items-center justify-center p-5">
             <span class="text-primary text-4xl font-bold font-bebas">12</span>
             <span class="text-sm text-center uppercase">Años activo</span>
           </div>
-          <div class="flex flex-col gap-2 items-center justify-center border-r border-primary/30 p-5">
+          <div class="flex flex-col gap-2 items-center justify-center p-5">
             <span class="text-primary text-4xl font-bold font-bebas uppercase">Zerg</span>
             <span class="text-sm text-center uppercase">Clase principal</span>
           </div>
