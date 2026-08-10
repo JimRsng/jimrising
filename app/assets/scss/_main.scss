@@ -62,6 +62,6 @@ a.router-link-exact-active.nav-link {
 }
 
 .nuxt-loading-indicator {
-  background: repeating-linear-gradient(to right, var(--ui-primary) 0%, var(--ui-primary) 50%, var(--ui-secondary) 100%)!important;
+  background: repeating-linear-gradient(to right, var(--ui-primary) 0%, var(--ui-primary) 50%, var(--ui-bg) 100%)!important;
   box-shadow: 0 0 10px rgb(255 255 255 / 50%);
 }
