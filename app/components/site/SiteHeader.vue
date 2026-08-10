@@ -81,7 +81,7 @@ onMounted(() => {
         :items="externalPages"
         variant="link"
         :highlight="false"
-        class="w-full justify-center"
+        class="w-full justify-end"
         :ui="{ linkLabel: 'uppercase' }"
       />
     </template>
