@@ -8,14 +8,14 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
 <template>
   <UPageHero
     class="relative flex items-center bg-elevated"
-    :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }"
+    :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start', wrapper: 'z-2' }"
     as="section"
   >
     <div
       class="absolute inset-0 z-1 pointer-events-none"
       :style="{
         backgroundSize: '60px 60px',
-        backgroundImage: 'linear-gradient(rgba(255,26,26,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,26,26,0.1) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(255,26,26,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,26,26,0.2) 1px, transparent 1px)',
         mask: 'linear-gradient(180deg, transparent 0%, black 40%, transparent 100%)',
       }"
     />
@@ -41,7 +41,7 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
         <NuxtLink class="block relative group overflow-hidden border border-primary/0 hover:border-primary transition-all duration-300 hover:shadow-md shadow-primary/50" :to="item.url" target="_blank">
           <img :src="item.thumbnailUrl" alt="" class="w-full rounded-none group-hover:scale-105 group-hover:opacity-75 transition-all duration-300">
           <div class="absolute bottom-0 left-0 text-start z-2">
-            <div class="p-4 flex flex-col justify-center gap-0">
+            <div class="p-4 flex flex-col justify-center gap-0 select-none">
               <div class="font-bebas text-primary text-sm tracking-widest font-normal">
                 {{ item.game }}
               </div>

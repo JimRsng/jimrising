@@ -36,7 +36,7 @@ const links: ButtonProps[] = [
       class="absolute inset-0 z-1 pointer-events-none"
       :style="{
         backgroundSize: '60px 60px',
-        backgroundImage: 'linear-gradient(rgba(255,26,26,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,26,26,0.04) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(255,26,26,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,26,26,0.05) 1px, transparent 1px)',
         mask: 'radial-gradient(ellipse at 30% 50%, black 20%, transparent 65%)',
       }"
     />
