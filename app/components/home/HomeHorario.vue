@@ -9,7 +9,11 @@ const weekDays = [
   { id: 0, name: "Dom", time: "5 PM CST", description: "" }
 ];
 
-const now = computed(() => new Date());
+const now = ref<Date>();
+
+onMounted(() => {
+  now.value = new Date();
+});
 </script>
 
 <template>
@@ -26,7 +30,7 @@ const now = computed(() => new Date());
     </template>
     <template #description>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
-        <div v-for="day in weekDays" :key="day.id" class="flex flex-col items-center justify-center p-4 text-center border" :class="now.getDay() === day.id ? 'border-primary-500 bg-primary-700/20' : 'border-primary/30 hover:bg-primary-700/5'">
+        <div v-for="day in weekDays" :key="day.id" class="flex flex-col items-center justify-center p-4 text-center border" :class="now?.getDay() === day.id ? 'border-primary-500 bg-primary-700/20' : 'border-primary/30 hover:bg-primary-700/5'">
           <span class="text-sm uppercase font-bebas tracking-widest">{{ day.name }}</span>
           <span class="text-sm font-semibold text-white">{{ day.description || '&nbsp;' }}</span>
           <span class="text-sm uppercase font-bebas tracking-widest">{{ day.time }}</span>
