@@ -33,6 +33,8 @@ const activeIndex = ref(0);
         :items="clips"
         arrows
         class="z-2"
+        loop
+        dots
         :ui="{
           item: 'basis-3/4 lg:basis-1/3',
           prev: 'sm:start-8 z-2 rounded-sm bg-default',
