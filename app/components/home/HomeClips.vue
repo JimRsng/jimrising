@@ -9,6 +9,7 @@ const { data: clips } = await useFetch("/api/twitch/clips", {
   <UPageHero
     class="relative flex items-center bg-elevated"
     :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }"
+    as="section"
   >
     <template #title>
       <div>

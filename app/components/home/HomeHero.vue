@@ -26,6 +26,7 @@ const links: ButtonProps[] = [
       backgroundRepeat: 'no-repeat',
       backgroundImage: 'url(/images/backgrounds/hero.png)',
     }"
+    as="section"
   >
     <div
       class="absolute inset-0 z-1"

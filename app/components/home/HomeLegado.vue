@@ -1,5 +1,10 @@
 <template>
-  <UPageHero orientation="horizontal" class="relative flex items-center bg-elevated overflow-hidden" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide' }">
+  <UPageHero
+    orientation="horizontal"
+    class="relative flex items-center bg-elevated overflow-hidden"
+    :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide' }"
+    as="section"
+  >
     <div aria-hidden="true" role="presentation" class="absolute left-[50%] translate-x-[-50%] -bottom-16 text-[16rem] text-nowrap pointer-events-none user-select-none text-red-500 opacity-3 font-bold font-bebas tracking-widest">STARCRAFT</div>
     <template #title>
       <div>

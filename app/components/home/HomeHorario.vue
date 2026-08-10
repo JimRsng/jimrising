@@ -13,7 +13,11 @@ const now = computed(() => new Date());
 </script>
 
 <template>
-  <UPageHero class="relative flex items-center" :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }">
+  <UPageHero
+    class="relative flex items-center"
+    :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start' }"
+    as="section"
+  >
     <template #title>
       <div>
         <h5 class="flex items-center text-sm font-normal gap-2 text-primary before:w-6 before:h-px before:bg-primary mb-4 uppercase">Horario semanal</h5>
