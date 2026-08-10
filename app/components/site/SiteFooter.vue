@@ -14,7 +14,7 @@
       <div class="font-bold text-xl tracking-widest">
         <span><span class="text-primary">JIM</span>RISING</span>
       </div>
-      <div class="lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5">
+      <div id="redes" class="lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5">
         <UButton
           v-for="link of SITE.links"
           :key="link.url"

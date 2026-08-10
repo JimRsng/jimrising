@@ -20,7 +20,7 @@ const pages: NavigationMenuItem[] = [
   },
   {
     label: "Redes",
-    to: "#footer"
+    to: "#redes"
   }
 ];
 
@@ -40,10 +40,22 @@ const externalPages: NavigationMenuItem[] = [
 onMounted(() => {
   const sections = document.querySelectorAll<HTMLElement>("section[id]");
   const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=center] nav a");
+  const limit = Math.max(
+    document.body.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.clientHeight,
+    document.documentElement.scrollHeight,
+    document.documentElement.offsetHeight
+  );
+
   addEventListener("scroll", () => {
     let current = "";
     for (const s of sections) {
-      if (window.scrollY >= s.offsetTop - 200) current = s.id;
+      if (scrollY >= limit - innerHeight) {
+        current = "redes";
+        break;
+      }
+      if (scrollY >= s.offsetTop - 200) current = s.id;
     }
     for (const a of navLinks) {
       const anchor = a.getAttribute("href")?.substring(1);
