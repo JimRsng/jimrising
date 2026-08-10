@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const getStreamTime = (time: string) => {
-  const referenceDate = new Date(`2000-01-01T${time}:00-06:00`); // Referenciado a la zona horaria de México (GMT-6)
-  const horaLocal = new Intl.DateTimeFormat("es", {
-    hour: "numeric",
-    minute: "2-digit",
-    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    hour12: true
-  }).format(new Date(referenceDate)).replace("a. m.", "AM").replace("p. m.", "PM");
-  return horaLocal;
-};
-
+// Times are in `America/Mexico_City` timezone
 const weekDays = [
   { id: 1, name: "Lun", time: "17:00", description: "" },
   { id: 2, name: "Mar", time: "17:00", description: "" },
@@ -25,6 +15,29 @@ const now = ref<Date>(new Date());
 onMounted(() => {
   now.value = new Date();
 });
+
+const getStreamTime = (time: string) => {
+  const [hours, minutes] = time.split(":");
+
+  const utcDate = new Date(Date.UTC(
+    now.value.getFullYear(),
+    now.value.getMonth(),
+    now.value.getDate(),
+    Number(hours),
+    Number(minutes)
+  ));
+
+  const [mxHour, mxMinute] = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Mexico_City",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).format(utcDate).split(":");
+
+  const offsetMinutes = Number(hours) * 60 + Number(minutes) - (Number(mxHour) * 60 + Number(mxMinute));
+
+  return new Date(utcDate.getTime() + offsetMinutes * 60000);
+};
 </script>
 
 <template>
@@ -44,7 +57,18 @@ onMounted(() => {
         <div v-for="day in weekDays" :key="day.id" class="flex flex-col items-center justify-center p-4 text-center border" :class="now.getDay() === day.id ? 'border-primary-500 bg-primary-700/20' : 'border-primary/30 hover:bg-primary-700/5'">
           <span class="text-sm uppercase font-bebas tracking-widest">{{ day.name }}</span>
           <span class="text-sm font-semibold text-white">{{ day.description || '&nbsp;' }}</span>
-          <span class="text-sm uppercase font-bebas tracking-widest">{{ day.time ? getStreamTime(day.time) : '---' }}</span>
+          <span class="text-sm uppercase font-bebas tracking-widest">
+            <NuxtTime
+              v-if="day.time"
+              locale="en-US"
+              :datetime="getStreamTime(day.time)"
+              hour="numeric"
+              minute="2-digit"
+              :time-zone="Intl.DateTimeFormat().resolvedOptions().timeZone"
+              hour12
+            />
+            <span v-else>---</span>
+          </span>
         </div>
       </div>
     </template>
