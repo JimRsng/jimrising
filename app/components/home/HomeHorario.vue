@@ -1,13 +1,13 @@
 <script setup lang="ts">
 // Times are in `America/Mexico_City` timezone
 const weekDays = [
-  { id: 1, name: "Lun", time: "17:00", description: "" },
-  { id: 2, name: "Mar", time: "17:00", description: "" },
-  { id: 3, name: "Mie", time: "17:00", description: "" },
+  { id: 1, name: "Lun", time: "17:00", description: "Stream en Twitch" },
+  { id: 2, name: "Mar", time: "17:00", description: "Stream en Twitch" },
+  { id: 3, name: "Mie", time: "17:00", description: "Stream en Twitch" },
   { id: 4, name: "Jue", time: "", description: "Descanso" },
-  { id: 5, name: "Vie", time: "17:00", description: "" },
-  { id: 6, name: "Sab", time: "17:00", description: "" },
-  { id: 0, name: "Dom", time: "17:00", description: "" }
+  { id: 5, name: "Vie", time: "17:00", description: "Stream en Twitch, Día de comunidad" },
+  { id: 6, name: "Sab", time: "17:00", description: "Stream en Twitch, Co-stream LCS" },
+  { id: 0, name: "Dom", time: "17:00", description: "Stream en Twitch, Co-stream LCS" }
 ];
 
 const now = ref<Date>(new Date());
