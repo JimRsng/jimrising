@@ -37,6 +37,15 @@ const externalPages: NavigationMenuItem[] = [
   }
 ];
 
+let current = "hero";
+
+const setNavLinksColor = (navLinks: NodeListOf<HTMLAnchorElement>) => {
+  for (const a of navLinks) {
+    const anchor = a.getAttribute("href")?.match(/#(\w+)/)?.[1];
+    a.style.color = !anchor && current === "hero" ? "var(--ui-primary)" : anchor === current ? "var(--ui-primary)" : "var(--ui-text-muted)";
+  }
+};
+
 onMounted(() => {
   const sections = document.querySelectorAll<HTMLElement>("section[id]");
   const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=center] nav a");
@@ -48,8 +57,7 @@ onMounted(() => {
     document.documentElement.offsetHeight
   );
 
-  addEventListener("scroll", () => {
-    let current = "";
+  const onScroll = () => {
     for (const s of sections) {
       if (scrollY >= limit - innerHeight) {
         current = "redes";
@@ -57,16 +65,26 @@ onMounted(() => {
       }
       if (scrollY >= s.offsetTop - 200) current = s.id;
     }
-    for (const a of navLinks) {
-      const anchor = a.getAttribute("href")?.substring(1);
-      a.style.color = !anchor && current === "hero" ? "var(--ui-primary)" : anchor === current ? "var(--ui-primary)" : "var(--ui-text-muted)";
-    }
+    setNavLinksColor(navLinks);
+  };
+
+  addEventListener("scroll", onScroll);
+
+  onUnmounted(() => {
+    removeEventListener("scroll", onScroll);
   });
 });
+
+const updateOffcanvasNavLinksColor = () => {
+  nextTick(() => {
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=body] nav a");
+    setNavLinksColor(navLinks);
+  });
+};
 </script>
 
 <template>
-  <UHeader>
+  <UHeader @update:open="updateOffcanvasNavLinksColor">
     <template #title>
       <img :src="SITE.logo" class="h-10 w-auto" alt="JimRising">
     </template>
