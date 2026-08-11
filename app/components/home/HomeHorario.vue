@@ -10,13 +10,14 @@ const weekDays = [
   { id: 0, name: "Dom", time: "17:00", description: "Stream en Twitch, Co-stream LCS" }
 ];
 
-const now = ref<Date>(new Date());
+const now = ref<Date>();
 
 onMounted(() => {
   now.value = new Date();
 });
 
 const getStreamTime = (time: string) => {
+  if (!now.value) now.value = new Date();
   const [hours, minutes] = time.split(":");
 
   const utcDate = new Date(Date.UTC(
