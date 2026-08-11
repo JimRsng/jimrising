@@ -17,13 +17,13 @@ onMounted(() => {
 });
 
 const getStreamTime = (time: string) => {
-  if (!now.value) now.value = new Date();
+  const now = new Date();
   const [hours, minutes] = time.split(":");
 
   const utcDate = new Date(Date.UTC(
-    now.value.getFullYear(),
-    now.value.getMonth(),
-    now.value.getDate(),
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
     Number(hours),
     Number(minutes)
   ));
