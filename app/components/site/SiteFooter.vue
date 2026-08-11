@@ -11,7 +11,7 @@
       />
     </template>
     <div class="flex flex-col items-center justify-center gap-4 py-6">
-      <div class="font-bold text-xl tracking-widest">
+      <div class="font-bebas text-3xl tracking-widest">
         <span><span class="text-primary">JIM</span>RISING</span>
       </div>
       <div id="redes" class="lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5">
