@@ -22,7 +22,7 @@ const links: ButtonProps[] = [
   <UPageHero
     orientation="horizontal"
     class="relative h-dvh flex items-center"
-    :ui="{ wrapper: 'z-2', title: 'tracking-wide' }"
+    :ui="{ wrapper: 'z-2', title: 'tracking-wide', container: 'self-end sm:self-center' }"
     :style="{
       backgroundSize: 'cover',
       backgroundPosition: 'center top',
@@ -57,7 +57,7 @@ const links: ButtonProps[] = [
       </div>
     </template>
     <template #links>
-      <div data-aos="fade-up" data-aos-duration="1600" class="flex flex-wrap gap-4 justify-center">
+      <div data-aos="fade-up" data-aos-duration="1600" class="flex flex-wrap gap-5">
         <UButton v-for="link in links" :key="link.label" v-bind="link" />
         <UFieldGroup>
           <UBadge icon="simple-icons:twitch" class="bg-purple-500 text-white px-3 py-2 rounded-none" :ui="{ leadingIcon: 'h-5 w-5' }" />

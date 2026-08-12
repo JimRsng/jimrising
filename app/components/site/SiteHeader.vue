@@ -84,7 +84,7 @@ const updateOffcanvasNavLinksColor = () => {
 </script>
 
 <template>
-  <UHeader :ui="{ root: 'fixed w-full' }" @update:open="updateOffcanvasNavLinksColor">
+  <UHeader @update:open="updateOffcanvasNavLinksColor">
     <template #title>
       <img :src="SITE.logo" class="h-10 w-auto" alt="JimRising">
     </template>
