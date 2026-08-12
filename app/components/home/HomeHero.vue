@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import type { ButtonProps } from "@nuxt/ui";
 
+const { data: followers } = await useFetch("/api/twitch/followers", {
+  key: "twitch:followers",
+  getCachedData: (key, nuxtApp) => nuxtApp.payload.data[key]
+});
+
 const links: ButtonProps[] = [
   {
     label: "Únete al stream",
     to: SITE.links.twitch.url,
     target: "_blank",
     ui: {
-      base: "px-6 py-3 text-lg font-semibold bg-primary text-black shadow shadow-xl hover:bg-primary/90 hover:shadow-red-500/30 uppercase scale-on-hover"
+      base: "px-6 py-2 text-lg font-semibold bg-primary text-black shadow shadow-xl hover:bg-primary/90 hover:shadow-red-500/30 uppercase scale-on-hover"
     }
   }
 ];
@@ -52,8 +57,12 @@ const links: ButtonProps[] = [
       </div>
     </template>
     <template #links>
-      <div data-aos="fade-up" data-aos-duration="1600">
+      <div data-aos="fade-up" data-aos-duration="1600" class="flex flex-wrap gap-4 justify-center">
         <UButton v-for="link in links" :key="link.label" v-bind="link" />
+        <UFieldGroup>
+          <UBadge icon="simple-icons:twitch" class="bg-purple-500 text-white px-3 py-2 rounded-none" :ui="{ leadingIcon: 'h-5 w-5' }" />
+          <UBadge v-if="followers?.count" color="neutral" class="px-4 py-2 text-base rounded-none" :label="new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(followers.count) + ' followers'" />
+        </UFieldGroup>
       </div>
     </template>
   </UPageHero>
