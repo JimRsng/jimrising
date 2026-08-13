@@ -59,15 +59,17 @@ const getStreamTime = (time: string) => {
           <span class="text-sm uppercase font-bebas tracking-widest">{{ day.name }}</span>
           <span class="text-sm font-semibold text-white">{{ day.description || '&nbsp;' }}</span>
           <span class="text-sm uppercase font-bebas tracking-widest">
-            <NuxtTime
-              v-if="day.time"
-              locale="en-US"
-              :datetime="getStreamTime(day.time)"
-              hour="numeric"
-              minute="2-digit"
-              :time-zone="Intl.DateTimeFormat().resolvedOptions().timeZone"
-              hour12
-            />
+            <ClientOnly v-if="day.time">
+              <NuxtTime
+
+                locale="en-US"
+                :datetime="getStreamTime(day.time)"
+                hour="numeric"
+                minute="2-digit"
+                :time-zone="Intl.DateTimeFormat().resolvedOptions().timeZone"
+                hour12
+              />
+            </ClientOnly>
             <span v-else>---</span>
           </span>
         </div>
