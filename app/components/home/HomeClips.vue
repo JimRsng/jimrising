@@ -45,7 +45,7 @@ const activeIndex = ref(0);
       >
         <div class="bg-elevated">
           <NuxtLink class="block relative group overflow-hidden border border-primary/0 hover:border-primary transition-all duration-300 hover:shadow-md shadow-primary/50" :class="{ 'pointer-events-none lg:pointer-events-auto opacity-40 lg:opacity-100': index !== activeIndex }" :to="item.url" target="_blank">
-            <img :src="item.thumbnailUrl" alt="" class="w-full rounded-none group-hover:scale-105 group-hover:opacity-75 transition-all duration-300">
+            <img :src="item.thumbnailUrl" :alt="item.title" class="w-full rounded-none group-hover:scale-105 group-hover:opacity-75 transition-all duration-300">
             <div class="absolute bottom-0 left-0 text-start z-2">
               <div class="p-4 flex flex-col justify-center gap-0 select-none">
                 <div class="font-bebas text-primary text-sm tracking-widest font-normal">
