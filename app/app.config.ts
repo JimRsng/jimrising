@@ -2,7 +2,7 @@ export default defineAppConfig({
   ui: {
     header: {
       slots: {
-        root: "bg-zinc-950/70 backdrop-blur border-b border-primary/30 h-(--ui-header-height) fixed w-full top-0 z-50"
+        root: "bg-default/70 backdrop-blur border-b border-primary/30 h-(--ui-header-height) fixed w-full top-0 z-50 shadow-sm"
       }
     },
     container: {

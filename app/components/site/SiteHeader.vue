@@ -1,41 +1,5 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from "@nuxt/ui";
-
-const pages: NavigationMenuItem[] = [
-  {
-    label: "Inicio",
-    to: "/"
-  },
-  {
-    label: "Legado",
-    to: "#legado"
-  },
-  {
-    label: "Horario",
-    to: "#horario"
-  },
-  {
-    label: "Clips",
-    to: "#clips"
-  },
-  {
-    label: "Redes",
-    to: "#redes"
-  }
-];
-
-const externalPages: NavigationMenuItem[] = [
-  {
-    label: "JimTracker",
-    to: "https://jimtracker.com",
-    target: "_blank"
-  },
-  {
-    label: "Comunidad",
-    to: "https://comunidad.jimtracker.com",
-    target: "_blank"
-  }
-];
+const { pages, bodyPages } = useNav();
 
 let current = "hero";
 
@@ -48,7 +12,7 @@ const setNavLinksColor = (navLinks: NodeListOf<HTMLAnchorElement>) => {
 
 onMounted(() => {
   const sections = document.querySelectorAll<HTMLElement>("section[id]");
-  const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=center] nav a");
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=center] #nav-main a");
   const limit = Math.max(
     document.body.scrollHeight,
     document.body.offsetHeight,
@@ -75,37 +39,54 @@ onMounted(() => {
   });
 });
 
-const updateOffcanvasNavLinksColor = () => {
+const updateBodyNavLinksColor = () => {
   nextTick(() => {
-    const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=body] nav a");
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>("div[data-slot=body] #nav-body-main a");
     setNavLinksColor(navLinks);
   });
 };
 </script>
 
 <template>
-  <UHeader @update:open="updateOffcanvasNavLinksColor">
+  <UHeader @update:open="updateBodyNavLinksColor">
     <template #title>
-      <img :src="SITE.logo" class="h-10 w-auto" alt="JimRising">
+      <div class="flex items-center gap-2">
+        <img :src="SITE.logo" class="h-10 w-auto" alt="JimRising">
+        <h1 class="text-lg font-bold uppercase">JimRising</h1>
+      </div>
     </template>
     <UNavigationMenu
-      :items="pages"
+      id="nav-main"
+      :items="pages.main"
       variant="link"
       :highlight="false"
       class="w-full justify-center"
+      :ui="{ linkLabel: 'uppercase', item: 'p-0' }"
+    />
+    <USeparator orientation="vertical" class="h-8 mx-4" :ui="{ border: 'border-primary/30' }" />
+    <UNavigationMenu
+      :items="pages.apps"
+      variant="link"
+      :highlight="false"
+      class="w-full justify-center"
+      :ui="{ linkLabel: 'uppercase', item: 'p-0' }"
     />
     <template #right>
-      <UNavigationMenu
-        :items="externalPages"
-        variant="link"
-        :highlight="false"
-        class="w-full justify-end"
-        :ui="{ linkLabel: 'uppercase' }"
-      />
+      <!-- TODO -->
     </template>
     <template #body>
       <UNavigationMenu
-        :items="pages"
+        id="nav-body-main"
+        :items="bodyPages.main"
+        variant="link"
+        orientation="vertical"
+        :highlight="false"
+        class="w-full justify-center"
+        :ui="{ linkLabel: 'uppercase' }"
+      />
+      <USeparator orientation="horizontal" class="my-4" :ui="{ border: 'border-primary/30' }" />
+      <UNavigationMenu
+        :items="bodyPages.apps"
         variant="link"
         orientation="vertical"
         :highlight="false"
