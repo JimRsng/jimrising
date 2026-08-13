@@ -1,4 +1,5 @@
 export const SITE = {
+  key: "main",
   name: "JimRising",
   domain: "jimrising.ahmedr.workers.dev",
   host: "https://jimrising.ahmedr.workers.dev",

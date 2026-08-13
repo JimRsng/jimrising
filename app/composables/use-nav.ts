@@ -1,41 +1,50 @@
 import type { NavigationMenuItem } from "@nuxt/ui";
 
 const appLinks = {
+  main: "https://jimrising.ahmedr.workers.dev",
   tracker: "https://jimtracker.com",
-  comunidad: "https://comunidad.jimtracker.com"
+  comunidad: "https://comunidad.jimtracker.com",
+  ruletas: "https://ruletas.jimtracker.com",
+  watch: "https://watch.jimtracker.com"
 };
+
+const currentSiteKey = SITE.key as keyof typeof appLinks;
 
 const pages: Record<string, NavigationMenuItem[]> = {
   main: [
     {
       label: "Inicio",
-      to: "/"
+      to: appLinks.main
     },
     {
       label: "Legado",
-      to: "#legado"
+      to: `${appLinks.main}#legado`
     },
     {
       label: "Horario",
-      to: "#horario"
+      to: `${appLinks.main}#horario`
     },
     {
       label: "Clips",
-      to: "#clips"
+      to: `${appLinks.main}#clips`
     },
     {
       label: "Redes",
-      to: "#redes"
+      to: `${appLinks.main}#redes`
     }
   ],
   apps: [
     {
+      value: "tracker",
       label: "Tracker",
       to: appLinks.tracker,
       icon: "simple-icons:leagueoflegends",
+      active: currentSiteKey === "tracker",
+      defaultOpen: currentSiteKey === "tracker",
       children: [
         {
           label: "Solo Queue",
+          defaultOpen: true,
           children: [
             {
               label: "2026",
@@ -49,6 +58,7 @@ const pages: Record<string, NavigationMenuItem[]> = {
         },
         {
           label: "Soloboom",
+          defaultOpen: true,
           children: [
             {
               label: "2025",
@@ -58,6 +68,7 @@ const pages: Record<string, NavigationMenuItem[]> = {
         },
         {
           label: "Retos",
+          defaultOpen: true,
           children: [
             {
               label: "One by One",
@@ -68,13 +79,20 @@ const pages: Record<string, NavigationMenuItem[]> = {
               to: `${appLinks.tracker}/season/2026/reto-nami`
             }
           ]
+        },
+        {
+          label: "Galería",
+          to: `${appLinks.tracker}/gallery`
         }
       ]
     },
     {
+      value: "comunidad",
       label: "Comunidad",
-      to: "https://comunidad.jimtracker.com",
+      to: appLinks.comunidad,
       icon: "lucide:users",
+      active: currentSiteKey === "comunidad",
+      defaultOpen: currentSiteKey === "comunidad",
       children: [
         {
           label: "Tabla",
@@ -89,10 +107,42 @@ const pages: Record<string, NavigationMenuItem[]> = {
   ]
 };
 
+const normalizeToApp = (navPages: Record<string, NavigationMenuItem[]>) => {
+  const prefix = appLinks[currentSiteKey];
+
+  const normalizeItem = (item: NavigationMenuItem): NavigationMenuItem => {
+    const { to, children, ...rest } = item;
+    let newTo = to;
+    if (typeof to === "string") {
+      const escPrefix = prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const stripped = to.replace(new RegExp(`^${escPrefix}`), "");
+      newTo = stripped === "" ? "/" : stripped;
+    }
+    const newChildren = Array.isArray(children) ? children.map(normalizeItem) : undefined;
+    return {
+      ...rest,
+      ...(newTo !== undefined ? { to: newTo } : {}),
+      ...(newChildren !== undefined ? { children: newChildren } : {})
+    };
+  };
+
+  return Object.fromEntries(
+    Object.entries(navPages).map(([key, items]) => [key,
+      key === currentSiteKey ? items.map(normalizeItem) : items.map((item) => {
+        if (item.value === currentSiteKey) {
+          return normalizeItem(item);
+        }
+        return item;
+      })
+    ])
+  );
+};
+
 export const useNav = () => {
+  const navPages = normalizeToApp(pages);
+
   const pagesWithoutChildren = Object.fromEntries(
-    Object.entries(pages).map(([key, items]) => [
-      key,
+    Object.entries(navPages).map(([key, items]) => [key,
       items.map((item) => {
         const { children, ...rest } = item;
         return rest;
@@ -101,11 +151,13 @@ export const useNav = () => {
   );
 
   const pagesWithChildrenWithoutTo = Object.fromEntries(
-    Object.entries(pages).map(([key, items]) => [
-      key,
+    Object.entries(navPages).map(([key, items]) => [key,
       items.map((item) => {
-        const { to, ...rest } = item;
-        return rest;
+        if (item.children) {
+          const { to, ...rest } = item;
+          return rest;
+        }
+        return item;
       })
     ])
   );
