@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "Jim Rising",
+  name: "JimRising",
   domain: "jimrising.ahmedr.workers.dev",
   host: "https://jimrising.ahmedr.workers.dev",
   cdn: import.meta.dev ? "http://localhost:5173/uploads" : "https://cdn.jimtracker.com",
