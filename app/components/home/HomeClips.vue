@@ -10,7 +10,11 @@ const activeIndex = ref(0);
 <template>
   <UPageHero
     class="relative flex items-center bg-elevated"
-    :ui="{ container: 'py-12 sm:py-12 lg:py-20', title: 'tracking-wide text-start', wrapper: 'z-2' }"
+    :ui="{
+      container: 'py-12 sm:py-12 lg:py-20',
+      title: 'tracking-wide text-start',
+      wrapper: 'z-2',
+    }"
     as="section"
   >
     <div
@@ -39,13 +43,13 @@ const activeIndex = ref(0);
           item: 'basis-3/4 lg:basis-1/3',
           prev: 'sm:start-8 z-2 rounded-sm bg-default',
           next: 'sm:end-8 z-2 rounded-sm bg-default',
-          viewport: 'pb-2',
+          viewport: 'p-1',
         }"
         @select="activeIndex = $event"
       >
-        <div class="bg-elevated">
-          <NuxtLink class="block relative group overflow-hidden border border-primary/0 hover:border-primary transition-all duration-300 hover:shadow-md shadow-primary/50" :class="{ 'pointer-events-none lg:pointer-events-auto opacity-40 lg:opacity-100': index !== activeIndex }" :to="item.url" target="_blank">
-            <img :src="item.thumbnailUrl" :alt="item.title" class="w-full rounded-none group-hover:scale-105 group-hover:opacity-75 transition-all duration-300">
+        <div class="group overflow-hidden bg-elevated relative ring ring-accented hover:ring-primary transition-all duration-300 hover:shadow-md shadow-primary/50">
+          <NuxtLink :class="{ 'pointer-events-none lg:pointer-events-auto opacity-40 lg:opacity-100': index !== activeIndex }" :to="item.url" target="_blank">
+            <img :src="item.thumbnailUrl" :alt="item.title" class="size-full rounded-none group-hover:scale-105 group-hover:opacity-75 transition-all duration-300">
             <div class="absolute bottom-0 left-0 text-start z-2">
               <div class="p-4 flex flex-col justify-center gap-0 select-none">
                 <div class="font-bebas text-primary text-sm tracking-widest font-normal">
