@@ -12,19 +12,19 @@ export default defineCachedEventHandler(async (event) => {
       },
       {
         label: "Legado",
-        to: `${appLinks.main}#legado`
+        to: `${appLinks.main}/#legado`
       },
       {
         label: "Horario",
-        to: `${appLinks.main}#horario`
+        to: `${appLinks.main}/#horario`
       },
       {
         label: "Clips",
-        to: `${appLinks.main}#clips`
+        to: `${appLinks.main}/#clips`
       },
       {
         label: "Redes",
-        to: `${appLinks.main}#redes`
+        to: `${appLinks.main}/#redes`
       }
     ],
     apps: [
