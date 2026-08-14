@@ -1,18 +1,5 @@
 <script setup lang="ts">
-const { data: navbar } = await useFetch("/api/navbar", {
-  key: "navbar",
-  getCachedData: (key, nuxtApp) => nuxtApp.payload.data[key]
-});
-
-if (!navbar.value) {
-  throw createError({
-    statusCode: 500,
-    message: "Failed to fetch navbar data",
-    fatal: true
-  });
-}
-
-const { pages, bodyPages } = navbar.value;
+const { pages, bodyPages } = await useNavbar();
 
 let current = "hero";
 
