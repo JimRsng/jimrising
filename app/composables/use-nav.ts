@@ -1,7 +1,7 @@
 import type { NavigationMenuItem } from "@nuxt/ui";
 
 const appLinks = {
-  main: "https://jimrising.ahmedr.workers.dev",
+  main: "https://site.jimtracker.com",
   tracker: "https://jimtracker.com",
   comunidad: "https://comunidad.jimtracker.com",
   ruletas: "https://ruletas.jimtracker.com",
