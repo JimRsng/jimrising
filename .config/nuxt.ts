@@ -65,6 +65,9 @@ export default defineNuxtConfig({
 
   ui: {
     fonts: true,
+    theme: {
+      colors: ["primary"]
+    },
     colors: {
       neutral: "slate",
       primary: "red"
