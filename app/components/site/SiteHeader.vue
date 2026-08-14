@@ -52,7 +52,7 @@ const updateBodyNavLinksColor = () => {
     <template #title>
       <div class="flex items-center gap-2">
         <img :src="SITE.logo" class="h-10 w-auto" alt="JimRising">
-        <h1 class="text-lg font-bold uppercase">JimRising</h1>
+        <h1 class="font-normal text-lg uppercase font-bebas tracking-widest">JimRising</h1>
       </div>
     </template>
     <UNavigationMenu
