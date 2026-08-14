@@ -63,7 +63,7 @@ const updateBodyNavLinksColor = () => {
       class="w-full justify-center"
       :ui="{ linkLabel: 'uppercase', item: 'p-0' }"
     />
-    <USeparator orientation="vertical" class="h-8 mx-4" :ui="{ border: 'border-primary/30' }" />
+    <USeparator orientation="vertical" class="h-8 mx-4" color="primary" />
     <UNavigationMenu
       :items="pages.apps"
       variant="link"
@@ -84,7 +84,7 @@ const updateBodyNavLinksColor = () => {
         class="w-full justify-center"
         :ui="{ linkLabel: 'uppercase' }"
       />
-      <USeparator orientation="horizontal" class="my-4" :ui="{ border: 'border-primary/30' }" />
+      <USeparator orientation="horizontal" class="my-4" color="primary" />
       <UNavigationMenu
         :items="bodyPages.apps"
         variant="link"

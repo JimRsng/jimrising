@@ -22,6 +22,18 @@ export default defineAppConfig({
       slots: {
         description: "text-base sm:text-xl/8"
       }
+    },
+    separator: {
+      variants: {
+        color: {
+          primary: {
+            border: "border-primary/30"
+          },
+          neutral: {
+            border: "border-accented"
+          }
+        }
+      }
     }
   }
 });
