@@ -37,6 +37,10 @@ export default defineCachedEventHandler(async (event) => {
         defaultOpen: app === "tracker",
         children: [
           {
+            label: "Inicio",
+            to: appLinks.tracker
+          },
+          {
             label: "Solo Queue",
             defaultOpen: true,
             children: [
