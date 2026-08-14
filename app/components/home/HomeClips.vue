@@ -47,8 +47,8 @@ const activeIndex = ref(0);
         }"
         @select="activeIndex = $event"
       >
-        <div class="group overflow-hidden bg-elevated relative ring ring-accented hover:ring-primary transition-all duration-300 hover:shadow-md shadow-primary/50">
-          <NuxtLink :class="{ 'pointer-events-none lg:pointer-events-auto opacity-40 lg:opacity-100': index !== activeIndex }" :to="item.url" target="_blank">
+        <div class="group overflow-hidden bg-elevated relative ring ring-accented hover:ring-primary transition-all duration-300 hover:shadow-md shadow-primary/50" :class="{ 'pointer-events-none lg:pointer-events-auto opacity-40 lg:opacity-100': index !== activeIndex }">
+          <NuxtLink :to="item.url" target="_blank" class="select-none">
             <img :src="item.thumbnailUrl" :alt="item.title" class="size-full rounded-none group-hover:scale-105 group-hover:opacity-75 transition-all duration-300">
             <div class="absolute bottom-0 left-0 text-start z-2">
               <div class="p-4 flex flex-col justify-center gap-0 select-none">
