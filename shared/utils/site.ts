@@ -1,5 +1,4 @@
 export const SITE = {
-  key: "main",
   name: "JimRising",
   domain: "site.jimtracker.com",
   host: "https://site.jimtracker.com",
@@ -7,6 +6,12 @@ export const SITE = {
   description: "Exjugador profesional de StarCraft 2 y pionero del streaming desde 2011. Fui el primer partner de Twitch en la región y, tras años de contenido de variedad, hoy mi enfoque principal es League of Legends.",
   logo: "/images/logos/jimrising.png",
   cover: "",
+  appLinks: {
+    tracker: "https://jimtracker.com",
+    comunidad: "https://comunidad.jimtracker.com",
+    ruletas: "https://ruletas.jimtracker.com",
+    watch: "https://watch.jimtracker.com"
+  },
   links: {
     instagram: {
       title: "Instagram",

@@ -1,5 +1,15 @@
 <script setup lang="ts">
-const { pages, bodyPages } = useNav();
+const { data: navbar } = await useFetch("/api/navbar");
+
+if (!navbar.value) {
+  throw createError({
+    statusCode: 500,
+    message: "Failed to fetch navbar data",
+    fatal: true
+  });
+}
+
+const { pages, bodyPages } = navbar.value;
 
 let current = "hero";
 
