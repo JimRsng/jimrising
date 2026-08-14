@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const { data: navbar } = await useFetch("/api/navbar");
+const { data: navbar } = await useFetch("/api/navbar", {
+  key: "navbar",
+  getCachedData: (key, nuxtApp) => nuxtApp.payload.data[key]
+});
 
 if (!navbar.value) {
   throw createError({
