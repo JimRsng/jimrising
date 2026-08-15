@@ -114,7 +114,7 @@ export default defineCachedEventHandler(async (event) => {
       if (typeof to === "string") {
         const escPrefix = prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         const stripped = to.replace(new RegExp(`^${escPrefix}`), "");
-        newTo = stripped === "" ? "/" : stripped;
+        newTo = stripped === "" ? "/" : stripped.startsWith("/#") ? stripped.slice(1) : stripped;
       }
       const newChildren = Array.isArray(children) ? children.map(normalizeItem) : undefined;
       return {
