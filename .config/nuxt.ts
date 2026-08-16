@@ -39,7 +39,9 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
         { rel: "manifest", href: "/site.webmanifest" },
         { rel: "preconnect", href: "https://static-cdn.jtvnw.net" },
-        { rel: "preconnect", href: SITE.cdn }
+        { rel: "preconnect", href: SITE.cdn },
+        { rel: "preload", href: "https://cdn.jimtracker.com/fonts/BebasNeue.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+        { rel: "preload", href: "https://cdn.jimtracker.com/fonts/DMSans.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" }
       ],
       meta: [
         { name: "robots", content: "index, follow" },
@@ -64,7 +66,7 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    fonts: true,
+    fonts: false,
     theme: {
       colors: ["primary"]
     },
@@ -129,13 +131,6 @@ export default defineNuxtConfig({
       autoInit: false,
       stylistic: true
     }
-  },
-
-  fonts: {
-    families: [
-      { name: "Bebas Neue", weights: [400], display: "swap" },
-      { name: "DM Sans", weights: [300, 400, 500, 600], display: "swap" }
-    ]
   },
 
   icon: {
