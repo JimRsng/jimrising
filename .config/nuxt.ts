@@ -83,10 +83,6 @@ export default defineNuxtConfig({
     }
   },
 
-  routeRules: {
-    "/api/_nuxt_icon/**": { cache: { maxAge: 1.577e+7 } }
-  },
-
   features: {
     inlineStyles: false
   },
@@ -95,35 +91,18 @@ export default defineNuxtConfig({
     typedPages: true
   },
 
-  compatibilityDate: "2026-05-30",
+  compatibilityDate: "2026-08-22",
 
   nitro: {
     prerender: {
       autoSubfolderIndex: false,
       crawlLinks: false,
       routes: ["/sitemap.xml"]
-    },
-    cloudflare: {
-      pages: {
-        routes: {
-          exclude: ["/images/*", "/videos/*"]
-        }
-      }
     }
   },
 
   hub: {
     cache: true
-  },
-
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          silenceDeprecations: ["color-functions", "import", "global-builtin"]
-        }
-      }
-    }
   },
 
   eslint: {
@@ -140,6 +119,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
+    zeroRuntime: true,
     discoverImages: false,
     urls: [
       { loc: "/", priority: 1 }

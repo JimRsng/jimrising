@@ -24,7 +24,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev --port=5173 --public",
     "generate": "nuxt generate",
-    "preview": "wrangler d1 migrations apply DB --local && wrangler dev",
+    "preview": "wrangler dev",
     "postinstall": "nuxt prepare",
     "analyze": "nuxt analyze",
     "lint": "node --run lint:eslint && node --run lint:stylelint",
